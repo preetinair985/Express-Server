@@ -67,7 +67,7 @@ app.post("/", function(req, res) {
         db.close();
       });
 
-      var query2 = {name: /^r/};
+      var query2 = {name: /^s/};
       dbo.collection("person").find(query2).toArray(function(err, result2) {
         if (err) throw err;
         var result3 = JSON.stringify(result2);
