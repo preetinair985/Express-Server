@@ -74,6 +74,15 @@ app.post("/", function(req, res) {
         console.log(`List of persons with name starting with  ${query2.name} - ${result3}`);
         db.close();
       });
+
+      var query3 = { age: "22"};
+      var newvalues = { $set: {name: "Clara", address: "Clare 123" } };
+      dbo.collection("person").updateOne(query3, newvalues, function(err, res) {
+        if (err) throw err;
+        console.log(`1 document updated ${res}`);
+        db.close();
+      });
+
     });
 
   });
